@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zam-MedShare - Saving Medicine. Saving Lives in Zambia.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-green': '#10B981',
+                        'medical-blue': '#3B82F6',
+                        'medical-dark': '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="h-8 w-8 text-medical-green mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>
+                        </svg>
+                        <span class="text-xl font-bold text-medical-dark">Zam-MedShare</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="nav-link text-medical-dark font-medium" onclick="showPage(event, 'home')">Home</a>
+                        <a href="#" class="nav-link text-gray-600 font-medium" onclick="showPage(event, 'about')">About Us</a>
+                        <a href="#" class="nav-link text-gray-600 font-medium" onclick="showPage(event, 'support')">Get Involved</a>
+                        <button class="btn-primary text-white px-6 py-2 rounded-full font-medium">Donate Now</button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-btn text-gray-600">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex items-center pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                        Saving Medicine.<br>
+                        <span class="text-yellow-300">Saving Lives</span> in Zambia.
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white mb-12 max-w-4xl mx-auto leading-relaxed">
+                        Zam-MedShare prevents medicine waste and redistributes it to patients who need it most.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <button class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold min-w-48">
+                            Donate Medicine
+                        </button>
+                        <button class="btn-secondary text-white px-8 py-4 rounded-full text-lg font-semibold min-w-48">
+                            Partner With Us
+                        </button>
+                        <button class="bg-white text-medical-green px-8 py-4 rounded-full text-lg font-semibold min-w-48 hover:bg-gray-100 transition-all">
+                            Support Our Work
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Medicine Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-8">The Crisis We're Solving</h2>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        <strong class="text-medical-green">1 in 4 Zambians</strong> struggles to access essential medicine, while 
+                        <strong class="text-medical-blue">millions of dollars' worth of medicine</strong> goes to waste each year. 
+                        No one should have to choose between food, rent, and their health.
+                    </p>
+                    <div class="bg-gradient-to-r from-medical-green to-medical-blue p-8 rounded-2xl text-white">
+                        <p class="text-2xl font-semibold">
+                            "Every expired medicine in a pharmacy could have saved a life in our communities."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-6">How We Save Lives</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our simple three-step process transforms medicine waste into life-saving care
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center fade-in card bg-white p-8 rounded-2xl">
+                        <div class="bg-medical-green w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-medical-dark mb-4">1. Collect</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Pharmacies, hospitals, and individuals donate surplus medicine that would otherwise expire unused.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center fade-in card bg-white p-8 rounded-2xl">
+                        <div class="bg-medical-blue w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2-7H5v2h14V4zM6 19c0 1.1.9 2 2 2h8c0-1.1-.9-2-2-2H6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-medical-dark mb-4">2. Verify</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Zam-MedShare carefully verifies, sorts, and matches medicine to ensure safety and effectiveness.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center fade-in card bg-white p-8 rounded-2xl">
+                        <div class="bg-yellow-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-medical-dark mb-4">3. Deliver</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Community partners deliver medicine directly to patients who need it most in underserved areas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="py-20 bg-medical-dark text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold mb-6">Our Impact So Far</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                        Every number represents a life touched, a family helped, a community strengthened
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-12 text-center">
+                    <div class="fade-in">
+                        <div class="counter" data-target="5000">0</div>
+                        <p class="text-2xl font-semibold text-medical-green mb-2">Prescriptions</p>
+                        <p class="text-gray-300">Redistributed to patients in need</p>
+                    </div>
+                    
+                    <div class="fade-in">
+                        <div class="counter" data-target="250000">$0</div>
+                        <p class="text-2xl font-semibold text-medical-blue mb-2">Worth of Medicine</p>
+                        <p class="text-gray-300">Saved from going to waste</p>
+                    </div>
+                    
+                    <div class="fade-in">
+                        <div class="counter" data-target="10000">0</div>
+                        <p class="text-2xl font-semibold text-yellow-400 mb-2">Patients</p>
+                        <p class="text-gray-300">Reached across Zambia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-6">Voices of Hope</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="fade-in card bg-gradient-to-br from-medical-green to-emerald-600 p-8 rounded-2xl text-white">
+                        <svg class="w-12 h-12 text-white opacity-50 mb-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="text-xl leading-relaxed mb-6">
+                            "Zam-MedShare is giving hope to families who would otherwise go without life-saving treatment. 
+                            This is what real change looks like."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-lg font-bold">CP</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Community Partner</p>
+                                <p class="text-green-100">Rural Health Clinic</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in card bg-gradient-to-br from-medical-blue to-blue-600 p-8 rounded-2xl text-white">
+                        <svg class="w-12 h-12 text-white opacity-50 mb-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 17h3l2-4V7H5v6h3z"/>
+                        </svg>
+                        <p class="text-xl leading-relaxed mb-6">
+                            "This project has the power to transform access to healthcare in Zambia. 
+                            We're proud to be part of this life-saving mission."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-lg font-bold">MD</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Medicine Donor</p>
+                                <p class="text-blue-100">Regional Hospital</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-20 bg-gradient-to-r from-medical-green to-medical-blue text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h2 class="text-5xl font-bold mb-8">Together, We Can End Medicine Waste and Save Lives</h2>
+                    <p class="text-xl mb-12 leading-relaxed">
+                        Every donation, every partnership, every act of support brings us closer to a Zambia 
+                        where no medicine goes to waste and no patient goes without care.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <button class="bg-white text-medical-green px-8 py-4 rounded-full text-lg font-semibold min-w-48 hover:bg-gray-100 transition-all">
+                            Donate Medicine
+                        </button>
+                        <button class="bg-yellow-400 text-medical-dark px-8 py-4 rounded-full text-lg font-semibold min-w-48 hover:bg-yellow-300 transition-all">
+                            Partner With Us
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold min-w-48 hover:bg-white hover:text-medical-green transition-all">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about" class="page pt-16">
+        <!-- Mission Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h1 class="text-5xl font-bold text-medical-dark mb-8">About Zam-MedShare</h1>
+                    <p class="text-2xl text-gray-600 leading-relaxed">
+                        We believe that access to medicine is a fundamental human right, not a privilege.
+                    </p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-medical-green to-medical-blue p-12 rounded-3xl text-white text-center fade-in">
+                    <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+                    <p class="text-xl leading-relaxed">
+                        To eliminate medicine waste in Zambia while ensuring that every person has access to 
+                        the life-saving medications they need, regardless of their economic circumstances.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="fade-in">
+                        <h2 class="text-4xl font-bold text-medical-dark mb-8">Our Vision</h2>
+                        <div class="bg-white p-8 rounded-2xl shadow-lg">
+                            <p class="text-2xl font-semibold text-medical-green mb-4">
+                                "A Zambia where no medicine goes to waste, and no patient goes without care."
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                We envision a future where the gap between medicine surplus and medicine need 
+                                is completely eliminated through innovative redistribution systems and 
+                                community partnerships.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in">
+                        <div class="bg-medical-dark p-8 rounded-2xl text-white">
+                            <h3 class="text-2xl font-bold mb-6">Our Values</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-medical-green rounded-full mr-4"></div>
+                                    <span class="text-lg">Compassion for every patient</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-medical-blue rounded-full mr-4"></div>
+                                    <span class="text-lg">Transparency in all operations</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-yellow-400 rounded-full mr-4"></div>
+                                    <span class="text-lg">Innovation in healthcare access</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-pink-400 rounded-full mr-4"></div>
+                                    <span class="text-lg">Sustainability for the future</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-8">Our Story</h2>
+                </div>
+                
+                <div class="prose prose-lg mx-auto fade-in">
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        Zam-MedShare was born from a simple yet powerful observation: while families in rural Zambia 
+                        were struggling to afford basic medications, pharmacies and hospitals in urban areas were 
+                        disposing of thousands of dollars worth of unexpired medicine.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        Our founders witnessed firsthand how this disconnect was creating unnecessary suffering. 
+                        Children were going without antibiotics, diabetics were rationing insulin, and elderly 
+                        patients were choosing between food and their heart medication.
+                    </p>
+                    
+                    <div class="bg-gradient-to-r from-medical-green to-medical-blue p-8 rounded-2xl text-white text-center">
+                        <p class="text-2xl font-semibold mb-4">
+                            "We realized that the solution wasn't just about charity – it was about creating 
+                            a sustainable system that benefits everyone."
+                        </p>
+                        <p class="text-lg">
+                            Today, Zam-MedShare is transforming how Zambia thinks about medicine distribution, 
+                            creating a model that other countries are beginning to adopt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-6">Our Team</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Passionate healthcare professionals, logistics experts, and community advocates 
+                        working together to save lives.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center fade-in card bg-white p-8 rounded-2xl">
+                        <div class="w-24 h-24 bg-medical-green rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-white">JM</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-medical-dark mb-2">Dr. Jane Mwanza</h3>
+                        <p class="text-medical-green font-semibold mb-4">Founder & Executive Director</p>
+                        <p class="text-gray-600">
+                            Former Ministry of Health official with 15 years of experience in healthcare policy and rural medicine access.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center fade-in card bg-white p-8 rounded-2xl">
+                        <div class="w-24 h-24 bg-medical-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-white">PK</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-medical-dark mb-2">Paul Kasonde</h3>
+                        <p class="text-medical-blue font-semibold mb-4">Operations Director</p>
+                        <p class="text-gray-600">
+                            Supply chain expert who previously managed pharmaceutical distribution for major NGOs across Southern Africa.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center fade-in card bg-white p-8 rounded-2xl">
+                        <div class="w-24 h-24 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-white">SM</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-medical-dark mb-2">Sarah Mutale</h3>
+                        <p class="text-yellow-600 font-semibold mb-4">Community Partnerships Lead</p>
+                        <p class="text-gray-600">
+                            Community organizer with deep connections to rural health clinics and grassroots organizations throughout Zambia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnerships -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-6">Our Partners</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Working together with government, NGOs, and healthcare providers to create lasting change.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="fade-in card bg-gray-50 p-8 rounded-xl text-center">
+                        <div class="w-16 h-16 bg-medical-green rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold">MOH</span>
+                        </div>
+                        <p class="font-semibold text-gray-700">Ministry of Health</p>
+                    </div>
+                    
+                    <div class="fade-in card bg-gray-50 p-8 rounded-xl text-center">
+                        <div class="w-16 h-16 bg-medical-blue rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold">WHO</span>
+                        </div>
+                        <p class="font-semibold text-gray-700">World Health Org</p>
+                    </div>
+                    
+                    <div class="fade-in card bg-gray-50 p-8 rounded-xl text-center">
+                        <div class="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold">ZPA</span>
+                        </div>
+                        <p class="font-semibold text-gray-700">Zambia Pharmacy Assoc</p>
+                    </div>
+                    
+                    <div class="fade-in card bg-gray-50 p-8 rounded-xl text-center">
+                        <div class="w-16 h-16 bg-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold">CHA</span>
+                        </div>
+                        <p class="font-semibold text-gray-700">Churches Health Assoc</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-medical-green to-medical-blue text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold mb-8">Join Our Mission</h2>
+                    <p class="text-xl mb-12 leading-relaxed">
+                        Be part of the solution. Help us build a healthcare system that works for everyone.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <button class="bg-white text-medical-green px-8 py-4 rounded-full text-lg font-semibold min-w-48 hover:bg-gray-100 transition-all" onclick="showPage(event, 'support')">
+                            Get Involved
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold min-w-48 hover:bg-white hover:text-medical-green transition-all">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Support/Get Involved Page -->
+    <div id="support" class="page pt-16">
+        <!-- Hero Section -->
+        <section class="py-20 bg-gradient-to-r from-medical-green to-medical-blue text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl font-bold mb-8">Get Involved</h1>
+                    <p class="text-2xl leading-relaxed">
+                        There are many ways to join our mission and help save lives across Zambia.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donate Medicine Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="fade-in">
+                        <h2 class="text-4xl font-bold text-medical-dark mb-8">Donate Medicine</h2>
+                        <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                            Turn your surplus medicine into life-saving care. We accept donations from 
+                            pharmacies, hospitals, clinics, and individuals.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-medical-green rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <span class="text-white font-bold text-sm">1</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-medical-dark mb-2">Contact Our Team</h3>
+                                    <p class="text-gray-600">Reach out to schedule a pickup or drop-off appointment.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-medical-blue rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <span class="text-white font-bold text-sm">2</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-medical-dark mb-2">Prepare Your Donation</h3>
+                                    <p class="text-gray-600">We'll guide you through our simple preparation process.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <span class="text-white font-bold text-sm">3</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-medical-dark mb-2">Make an Impact</h3>
+                                    <p class="text-gray-600">Receive updates on how your donation helped patients in need.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold mt-8">
+                            Donate Medicine Now
+                        </button>
+                    </div>
+                    
+                    <div class="fade-in">
+                        <div class="bg-gradient-to-br from-medical-green to-emerald-600 p-8 rounded-3xl text-white">
+                            <h3 class="text-2xl font-bold mb-6">What We Accept</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span>Unexpired prescription medications</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span>Over-the-counter medicines</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span>Medical supplies and equipment</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span>Vitamins and supplements</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fund Our Work Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-8">Fund Our Work</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Your financial support makes life-saving medicine available to thousands of people. 
+                        Every dollar directly funds our operations, logistics, and community outreach programs.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="fade-in card bg-white p-8 rounded-2xl text-center">
+                        <div class="w-16 h-16 bg-medical-green rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl font-bold">$25</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-medical-dark mb-4">Supporter</h3>
+                        <p class="text-gray-600 mb-6">Covers transportation costs to deliver medicine to 5 patients in rural areas.</p>
+                        <button class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full">
+                            Donate $25
+                        </button>
+                    </div>
+                    
+                    <div class="fade-in card bg-white p-8 rounded-2xl text-center border-4 border-medical-blue">
+                        <div class="w-16 h-16 bg-medical-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl font-bold">$100</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-medical-dark mb-4">Champion</h3>
+                        <p class="text-gray-600 mb-6">Funds medicine verification and sorting for an entire community health clinic.</p>
+                        <button class="btn-secondary text-white px-6 py-3 rounded-full font-semibold w-full">
+                            Donate $100
+                        </button>
+                    </div>
+                    
+                    <div class="fade-in card bg-white p-8 rounded-2xl text-center">
+                        <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl font-bold">$500</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-medical-dark mb-4">Hero</h3>
+                        <p class="text-gray-600 mb-6">Sponsors a complete medicine redistribution program for an entire district.</p>
+                        <button class="bg-yellow-500 hover:bg-yellow-400 text-white px-6 py-3 rounded-full font-semibold w-full transition-all">
+                            Donate $500
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12 fade-in">
+                    <p class="text-lg text-gray-600 mb-6">
+                        Prefer a custom amount? Every contribution makes a difference.
+                    </p>
+                    <button class="bg-medical-dark text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-700 transition-all">
+                        Support Our Work
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner With Us Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-8">Partner With Us</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Join our network of NGOs, clinics, and community organizations working together 
+                        to ensure medicine reaches those who need it most.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="fade-in card bg-gradient-to-br from-medical-green to-emerald-600 p-8 rounded-2xl text-white">
+                        <h3 class="text-2xl font-bold mb-6">Healthcare Providers</h3>
+                        <p class="text-lg mb-6 leading-relaxed">
+                            Hospitals, clinics, and pharmacies can join our network to both donate surplus 
+                            medicine and receive redistributed medications for their patients.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Free pickup and delivery services</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Detailed impact reporting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Training and support</span>
+                            </li>
+                        </ul>
+                        <button class="bg-white text-medical-green px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all">
+                            Become a Healthcare Partner
+                        </button>
+                    </div>
+                    
+                    <div class="fade-in card bg-gradient-to-br from-medical-blue to-blue-600 p-8 rounded-2xl text-white">
+                        <h3 class="text-2xl font-bold mb-6">Community Organizations</h3>
+                        <p class="text-lg mb-6 leading-relaxed">
+                            NGOs, faith-based organizations, and community groups can help us identify 
+                            patients in need and facilitate medicine distribution.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Access to free medicines for your community</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Partnership recognition and support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Capacity building opportunities</span>
+                            </li>
+                        </ul>
+                        <button class="bg-white text-medical-blue px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all">
+                            Become a Community Partner
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-medical-dark mb-8">Get In Touch</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Ready to join our mission? Have questions? We'd love to hear from you.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-12 rounded-3xl shadow-lg fade-in">
+                    <form class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3">Full Name *</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-green focus:border-transparent transition-all" placeholder="Enter your full name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3">Organization</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-green focus:border-transparent transition-all" placeholder="Your organization (optional)">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3">Email Address *</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-green focus:border-transparent transition-all" placeholder="your.email@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-3">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-green focus:border-transparent transition-all" placeholder="+260 XXX XXX XXX">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-3">How would you like to get involved?</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-green focus:border-transparent transition-all">
+                                <option>Select an option</option>
+                                <option>Donate Medicine</option>
+                                <option>Financial Support</option>
+                                <option>Healthcare Partnership</option>
+                                <option>Community Partnership</option>
+                                <option>Volunteer Opportunities</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-3">Message *</label>
+                            <textarea rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-green focus:border-transparent transition-all" placeholder="Tell us more about your interest in supporting Zam-MedShare..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn-primary text-white px-12 py-4 rounded-full text-lg font-semibold">
+                                Send Message
+                            </button>
+                            <p class="text-sm text-gray-500 mt-4">
+                                We'll get back to you within 24 hours.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-20 bg-gradient-to-r from-medical-green to-medical-blue text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold mb-8">Every Action Saves Lives</h2>
+                    <p class="text-xl mb-12 leading-relaxed">
+                        Whether you donate medicine, fund our work, or partner with us, you're directly 
+                        contributing to a healthier, more equitable Zambia.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <button class="bg-white text-medical-green px-8 py-4 rounded-full text-lg font-semibold min-w-48 hover:bg-gray-100 transition-all">
+                            Start Donating
+                        </button>
+                        <button class="bg-yellow-400 text-medical-dark px-8 py-4 rounded-full text-lg font-semibold min-w-48 hover:bg-yellow-300 transition-all">
+                            Fund Our Mission
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-medical-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <svg class="h-8 w-8 text-medical-green mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>
+                        </svg>
+                        <span class="text-xl font-bold">Zam-MedShare</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Saving medicine. Saving lives. Building a healthier Zambia for everyone.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-300 hover:text-medical-green transition-colors" onclick="showPage(event, 'home')">Home</a>
+                        <a href="#" class="block text-gray-300 hover:text-medical-green transition-colors" onclick="showPage(event, 'about')">About Us</a>
+                        <a href="#" class="block text-gray-300 hover:text-medical-green transition-colors" onclick="showPage(event, 'support')">Get Involved</a>
+                        <a href="#" class="block text-gray-300 hover:text-medical-green transition-colors">Impact Reports</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Get Involved</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-300 hover:text-medical-green transition-colors">Donate Medicine</a>
+                        <a href="#" class="block text-gray-300 hover:text-medical-green transition-colors">Fund Our Work</a>
+                        <a href="#" class="block text-gray-300 hover:text-medical-green transition-colors">Partner With Us</a>
+                        <a href="#" class="block text-gray-300 hover:text-medical-green transition-colors">Volunteer</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <p>📧 info@zam-medshare.org</p>
+                        <p>📞 +260 XXX XXX XXX</p>
+                        <p>📍 Lusaka, Zambia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Zam-MedShare. All rights reserved. | Saving medicine, saving lives.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
